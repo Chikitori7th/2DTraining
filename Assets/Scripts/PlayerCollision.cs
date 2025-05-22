@@ -18,5 +18,16 @@ public class PlayerCollision : MonoBehaviour
             gameManager.GameOver();
             Debug.Log("Hit Trap");
         }
+        else if (collision.CompareTag("Enemy"))
+        {
+            gameManager.GameOver();
+            Debug.Log("Hit Enemy");
+        }
+        else if (collision.CompareTag("Key"))
+        {
+            Destroy(collision.gameObject);
+            gameManager.GameWin();
+            Debug.Log("Win");
+        }
     }
 }
